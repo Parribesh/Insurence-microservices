@@ -1,0 +1,12 @@
+package com.crm.service;
+
+import java.util.List;
+
+import com.crm.domain.Inquiry;
+
+public interface InquiryService {
+	
+	Inquiry createInquiry(Inquiry inquiry);
+	Inquiry getInquiryByClaimId(Long claimId);
+	List<Inquiry> getAllInquiry();
+}

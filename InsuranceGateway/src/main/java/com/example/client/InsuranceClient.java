@@ -1,0 +1,57 @@
+package com.example.client;
+
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+@Component
+public class InsuranceClient {
+	
+	public JsonNode createrInsurer(JsonNode json) {
+		
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);		
+		HttpEntity<String> request = new HttpEntity<String>(json.toString(), headers);
+		RestTemplate restTemplate = new RestTemplate();
+		System.out.println("from gateway client" + json);
+		ResponseEntity<Object> responseEntity = restTemplate.postForEntity("http://localhost:8181/insurance/createInsurer", request, Object.class);
+		Object object = responseEntity.getBody();
+		
+		ObjectMapper mapper = new ObjectMapper();
+		JsonNode output = mapper.convertValue(object, JsonNode.class);
+		
+		return output;
+	}
+	
+	public JsonNode getPlanByEmail(String email) {
+				
+		
+		RestTemplate restTemplate = new RestTemplate();
+		ResponseEntity<Object> responseEntity = restTemplate.getForEntity("http://localhost:8181/plan/getplanByInsurerEmail/"+email, Object.class);
+		Object object = responseEntity.getBody();
+		
+		ObjectMapper mapper = new ObjectMapper();
+		JsonNode output = mapper.convertValue(object, JsonNode.class);
+		
+		return output;
+	}
+
+	public JsonNode getInsurerByEmail(String email) {
+		RestTemplate restTemplate = new RestTemplate();
+		ResponseEntity<Object> responseEntity = restTemplate.getForEntity("http://localhost:8181/insurance/getInsurerByEmail/"+email, Object.class);
+		Object object = responseEntity.getBody();
+		
+		System.out.println(object.toString());
+		
+		ObjectMapper mapper = new ObjectMapper();
+		JsonNode output = mapper.convertValue(object, JsonNode.class);
+		
+		return output;
+	}
+}

@@ -1,0 +1,11 @@
+package com.example.service;
+
+public class DocumentServiceImpl implements DocumentService {
+
+	@Override
+	public String saveDocs() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

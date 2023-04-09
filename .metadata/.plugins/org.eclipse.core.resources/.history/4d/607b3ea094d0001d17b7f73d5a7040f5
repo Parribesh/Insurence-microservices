@@ -1,0 +1,42 @@
+package com.claim.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.claim.domain.Claim;
+import com.claim.service.ClaimService;
+
+@RestController
+public class ClaimController {
+	
+	@Autowired ClaimService claimService;
+	
+	@PostMapping("claim/createClaim")
+	public Claim createClaim(@RequestBody Claim claim) {
+		return claimService.createClaim(claim);
+		
+	}
+	
+	@GetMapping("claim/getClaim/{claimId}")
+	public Claim getClaimById(@PathVariable Long claimId) {
+		return claimService.getClaimById(claimId);
+		
+	}
+	
+	@GetMapping("claim/getClaimByEmail/{email}")
+	public Claim getClaimByEmail(@PathVariable String email) {
+		return claimService.getClaimByEmail(email);
+		
+	}
+	
+	@PostMapping("claim/updateClaimStatus/")
+	public String updateClaimStatus(@RequestHeader Long claimId, @RequestHeader String status) {
+		return claimService.updateClaim(claimId, status);
+		
+	}
+}

@@ -1,0 +1,29 @@
+package com.example.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.client.ClaimClient;
+import com.fasterxml.jackson.databind.JsonNode;
+
+@RestController
+@CrossOrigin("*")
+public class ClaimController {
+	
+	@Autowired ClaimClient claimClient;
+	
+	@PostMapping("api/claim/createClaim")
+	public JsonNode createClaim(@RequestBody JsonNode json) {
+		return claimClient.createrClaim(json);
+	}
+	
+	@GetMapping("api/claim/getClaimByEmail/{email}")
+	public JsonNode getClaimByEmail(@PathVariable String email) {
+		return claimClient.getClaimByEmail(email);
+	}
+}

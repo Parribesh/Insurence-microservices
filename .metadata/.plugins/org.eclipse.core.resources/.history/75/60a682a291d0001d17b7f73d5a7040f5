@@ -1,0 +1,9 @@
+package com.example.service;
+
+import org.springframework.web.multipart.MultipartFile;
+
+public interface DocumentService {
+	
+	String savePlanDocs(MultipartFile file, Long planId);
+	String saveClaimDocs(MultipartFile file, Long planId);
+}

@@ -1,0 +1,32 @@
+package com.crm.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.crm.domain.Inquiry;
+import com.crm.service.InquiryService;
+
+public class CRMController {
+	
+	@Autowired InquiryService inquiryService;
+	
+	@GetMapping("/crm/getInquiry/{claimId}")
+	public Inquiry getInquiry(@PathVariable Long claimId) {
+		return inquiryService.getInquiryByClaimId(claimId);
+	}
+	
+	@PostMapping("/crm/createInquiry")
+	public Inquiry createInquiry(@RequestBody Inquiry inquiry) {
+		return inquiryService.createInquiry(inquiry);
+	}
+	
+	@GetMapping("crm/getAllInquiry")
+	public List<Inquiry> getAllInquiry(){
+		return inquiryService.getAllInquiry();
+	}
+}

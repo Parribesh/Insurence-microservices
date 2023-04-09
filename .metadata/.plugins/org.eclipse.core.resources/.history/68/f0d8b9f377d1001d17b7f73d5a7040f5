@@ -1,0 +1,17 @@
+package com.crm.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.crm.service.InquiryService;
+
+public class CRMController {
+	
+	@Autowired InquiryService inquiryService;
+	
+	@GetMapping("/crm/getInquiry/{claimId}")
+	public String getInquiry(@PathVariable Long claimId) {
+		
+	}
+}

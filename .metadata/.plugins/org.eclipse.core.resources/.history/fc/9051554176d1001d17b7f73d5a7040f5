@@ -1,0 +1,9 @@
+package com.crm.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.crm.domain.Inquiry;
+
+public class InquiryRepository implements JpaRepository<Inquiry, Long> {
+
+}

@@ -1,0 +1,8 @@
+package com.example.service;
+
+
+public interface DocumentService {
+	
+	String savePlanDocs(byte[] file, Long planId);
+	String saveClaimDocs(byte[] file, Long planId);
+}

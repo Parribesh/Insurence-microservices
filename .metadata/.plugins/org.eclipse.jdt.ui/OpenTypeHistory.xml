@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=InsuranceMicroservice/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.insurance.service{IPlanService.java[IPlanService" modifiers="513" timestamp="1679536481000"/>
+    <typeInfo handle="=ClaimMicroservce/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.claim.service{DocumentService.java[DocumentService" modifiers="513" timestamp="1680286102000"/>
+    <typeInfo handle="=InsuranceGateway/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.service{DocumentService.java[DocumentService" modifiers="513" timestamp="1680393765000"/>
+    <typeInfo handle="=CRMMicroservice/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.crm.service{InquiryService.java[InquiryService" modifiers="513" timestamp="1680489353000"/>
+    <typeInfo handle="=InsuranceMicroservice/\/Users\/paribeshneupane\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/3.0.3\/spring-data-jpa-3.0.3.jar=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-jpa=/=/maven.version=/3.0.3=/=/maven.scope=/compile=/=/maven.pomderived=/true=/&lt;org.springframework.data.jpa.repository(JpaRepository.class[JpaRepository" modifiers="1537" timestamp="1678214029000"/>
+    <typeInfo handle="=CRMMicroservice/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.crm.service{MessageService.java[MessageService" modifiers="513" timestamp="1680489282000"/>
+</typeInfoHistroy>

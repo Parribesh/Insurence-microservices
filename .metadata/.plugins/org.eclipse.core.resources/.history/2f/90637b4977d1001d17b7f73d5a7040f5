@@ -1,0 +1,27 @@
+package com.crm.service;
+
+import java.util.List;
+
+import com.crm.domain.Inquiry;
+
+public class InquiryServiceImpl implements InquiryService {
+
+	@Override
+	public Inquiry createInquiry(Inquiry inquiry) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Inquiry getInquiryByClaimId(Long claimId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Inquiry> getAllInquiry() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

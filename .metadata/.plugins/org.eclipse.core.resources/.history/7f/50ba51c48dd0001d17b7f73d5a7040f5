@@ -1,0 +1,46 @@
+package com.example.controller;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import org.apache.commons.io.FilenameUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.example.service.DocumentService;
+
+import jakarta.servlet.http.HttpServletRequest;
+
+@RestController
+@CrossOrigin("http://localhost:3000")
+public class DocumentController {
+	
+	@Autowired DocumentService docService;
+	
+
+	@PostMapping("api/docs/upload/{planId}")
+	public String getDocs(@PathVariable Long planId, @RequestBody MultipartFile file) {
+		
+		return docService.savePlanDocs(file, planId);
+	}
+	
+	@PostMapping("api/docs/upload/claim/{planId}")
+	public String uploadClaimDocs(@PathVariable Long planId, @RequestBody MultipartFile file) {
+		
+		return docService.saveClaimDocs(file, planId);
+	}
+	
+
+	
+}
+

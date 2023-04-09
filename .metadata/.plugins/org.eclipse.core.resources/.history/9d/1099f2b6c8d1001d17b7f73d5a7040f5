@@ -1,0 +1,13 @@
+package com.crm.service;
+
+import com.crm.domain.Message;
+
+public class MessageServiceImpl implements MessageService {
+
+	@Override
+	public Message createMessage(Message m) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
